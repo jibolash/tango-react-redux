@@ -10,7 +10,6 @@ export function loadGigs() {
         return fetch('https://tangong-api.herokuapp.com/api/gigs').then(response => {
             return response.json();
         }).then(json => {
-            // console.log(json);
             dispatch(loadGigsSuccess(json));
         })
         .catch(error => {

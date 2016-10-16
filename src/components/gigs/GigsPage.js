@@ -2,26 +2,19 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as gigActions from '../../actions/gigActions';
+import GigList from './GigList';
 
 class GigsPage extends React.Component {
     constructor(props, context){
         super(props, context);
     }
 
-
-    gigRow(gig, index){
-        return (
-            <div key={index}>
-                {gig.title.toString()} in {gig.category.name.toString()}
-            </div>
-        );
-    }
-
     render() {
+        const {gigs} = this.props;
         return (
             <div>
                 <h1>Gigs</h1>
-                {this.props.gigs.map(this.gigRow)}
+                <GigList gigs={gigs}/>
             </div>
         );
     }
