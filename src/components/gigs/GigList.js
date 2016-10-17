@@ -4,9 +4,9 @@ import GigCard from './GigCard';
 const GigList = ({gigs}) => {
     return (
         <div>
-            {gigs.map(gig =>
-                <GigCard key={gig._id} gig={gig} />
-            )}
+            <div className="row">
+                {gigs.map(gig => <GigCard key={gig._id} gig={gig} /> )}
+            </div>
         </div>
     );
 }
